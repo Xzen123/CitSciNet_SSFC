@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
 import MapView from '../Map/Map';
 import { useAuth } from '../../context/AuthContext';
 import api from '../../services/api';

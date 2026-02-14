@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import axios from 'axios';
-import { motion, AnimatePresence } from 'framer-motion';
+import './Map.css';
 import './Map.css';
 
 // Fix for default marker icon
@@ -65,7 +65,6 @@ function MapView({ height }) {
     const [observations, setObservations] = useState([]);
     const [activeFilter, setActiveFilter] = useState('all');
     const [selectedObs, setSelectedObs] = useState(null);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchObservations = async () => {
@@ -73,10 +72,7 @@ function MapView({ height }) {
                 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
                 const response = await axios.get(`${API_URL}/api/observations`);
                 setObservations(response.data);
-                setLoading(false);
             } catch (error) {
-                console.error('Error fetching observations:', error);
-                setLoading(false);
             }
         };
         fetchObservations();

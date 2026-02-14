@@ -111,10 +111,10 @@ const CurriculumActivity = () => {
                             <ul style={{ listStyle: 'none', padding: 0 }}>
                                 {activity.resources?.map((res, i) => (
                                     <li key={i} style={{ marginBottom: '10px' }}>
-                                        <a href="#" onClick={(e) => e.preventDefault()} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'var(--primary)' }}>
+                                        <button onClick={(e) => { e.preventDefault(); alert("Resource opening..."); }} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'var(--primary)', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem' }}>
                                             <span style={{ marginRight: '8px' }}>{res.type === 'video' ? '📺' : '📄'}</span>
                                             {res.title}
-                                        </a>
+                                        </button>
                                     </li>
                                 ))}
                             </ul>

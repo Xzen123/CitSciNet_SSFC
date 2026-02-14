@@ -11,7 +11,7 @@ axios.interceptors.request.use((config) => {
     return config;
 });
 
-export default {
+const api = {
     // Auth
     login: (data) => axios.post(`${API_URL}/api/auth/login`, data),
     register: (data) => axios.post(`${API_URL}/api/auth/register`, data),
@@ -40,3 +40,5 @@ export default {
     getPendingValidation: () => axios.get(`${API_URL}/api/validation/pending`),
     submitReview: (data) => axios.post(`${API_URL}/api/validation/review`, data),
 };
+
+export default api;
